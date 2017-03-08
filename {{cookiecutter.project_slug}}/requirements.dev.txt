@@ -1,0 +1,14 @@
+-r requirements.txt
+
+# development tools
+django-debug-toolbar==1.7
+
+# testing tools
+django-dynamic-fixture<1.10
+pytest<3.1
+pytest-django<3.2
+pytest-flake8
+pytest-runner>=2.0,<3dev
+responses<0.6
+
+-e .[test]

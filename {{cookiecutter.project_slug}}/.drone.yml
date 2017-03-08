@@ -1,0 +1,29 @@
+build:
+  {{ cookiecutter.project_slug }}:
+    image: presslabs/{{ cookiecutter.project_slug }}
+    pull: true
+    auth_config:
+      username: presslabsbot
+      password: $$DOCKER_PASSWORD
+      email: ping@presslabs.com
+    environment:
+      - DJANGO_SETTINGS_MODULE=django_project.settings.test
+    commands:
+      - pip install -U -r requirements.dev.txt
+      - make lint
+      - make full-test
+
+publish:
+  docker:
+    username: presslabsbot
+    password: $$DOCKER_PASSWORD
+    email: ping@presslabs.com
+    repo: presslabs/{{ cookiecutter.project_slug }}
+    tag: $${BRANCH/master/latest}
+    storage_path: /drone/docker
+    when:
+      branch: master
+
+cache:
+  mount:
+    - /drone/docker

@@ -1,0 +1,9 @@
+{
+    "project_name": "Funky",
+    "project_slug": "funky",
+    "project_env_prefix": "FUNKY",
+    "project_url": "https://github.com/Presslabs/funky",
+    "description": "A very funky project",
+    "author": "Presslabs SRL",
+    "author_email": "ping@presslabs.com"
+}

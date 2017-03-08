@@ -1,0 +1,17 @@
+*.egg-info
+.coverage
+.tox
+build
+coverage-html
+docs/_site
+venv
+.tox
+**/*.pyc
+.cache
+
+Dockerfile
+README.md
+LICENSE
+docker-compose.yml
+Makefile
+Vagrantfile
